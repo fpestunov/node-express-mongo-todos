@@ -3,13 +3,15 @@ const router = Router()
 
 router.get('/', (req, res) => {
     res.render('index', {
-        title: 'Todos List'
+        title: 'Todos List',
+        isIndex: true
     })
 })
 
 router.get('/create', (req, res) => {
     res.render('create', {
-        title: 'Create Todo'
+        title: 'Create Todo',
+        isCreate: true
     })
 })
 
