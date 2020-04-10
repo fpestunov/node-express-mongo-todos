@@ -1,10 +1,14 @@
 const { Router } = require('express')
+const Todo = require('../models/Todo')
 const router = Router()
 
-router.get('/', (req, res) => {
+// получим данные асинхронно и передадим на Гл страницу
+router.get('/', async (req, res) => {
+    const todos = await Todo.find({})
     res.render('index', {
         title: 'Todos List',
-        isIndex: true
+        isIndex: true,
+        todos
     })
 })
 
